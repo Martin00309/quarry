@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quarry-search"
+version = "0.1.0"
+description = "An embeddable full-text search engine for the terminal: inverted index, BM25 ranking, and a small query language."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [{ name = "Martin Eduardo Muegues Baquero" }]
+keywords = [
+    "search",
+    "full-text-search",
+    "inverted-index",
+    "bm25",
+    "information-retrieval",
+    "cli",
+    "terminal",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Database :: Database Engines/Servers",
+    "Topic :: Text Processing :: Indexing",
+]
+
+[project.urls]
+Homepage = "https://github.com/Martin00309/quarry"
+Repository = "https://github.com/Martin00309/quarry"
+Issues = "https://github.com/Martin00309/quarry/issues"
+
+[project.scripts]
+quarry = "quarry.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "W", "C4"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
