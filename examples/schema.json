@@ -1,0 +1,10 @@
+{
+  "id": "id",
+  "fields": {
+    "id":    {"kind": "keyword", "stored": true},
+    "title": {"kind": "text", "stored": true, "analyzer": "english", "boost": 2.0},
+    "body":  {"kind": "text", "stored": true, "analyzer": "english"},
+    "tags":  {"kind": "keyword", "stored": true},
+    "year":  {"kind": "numeric", "stored": true, "numeric_type": "int"}
+  }
+}
